@@ -80,10 +80,12 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  while (recipe.indexOf(ingredients) === -1){
-    result.push(ingredients);
-    recipe = recipe.slice(1)
-  }
+  recipe.ingredients.forEach((curr,idx,arr)=>{
+    let noQun = curr.slice(curr.indexOf(' ')+ 1);
+    let noMes = noQun.slice(noQun.indexOf(' ')+ 1);
+    result.push(noMes);
+  
+  })
   return result;
 }
 //Array.indexOf() looks at the index of an array
@@ -97,7 +99,9 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach((curr,idx,arr)=>{
+    result.push(curr.split(' ').slice(2).join(' '));
+   })
   return result;
 }
 
@@ -113,7 +117,9 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.forEach((curr,idx,arr)=>{
+    result.push(curr.split(' ').slice(0,1).join())
+  })
   return result;
 }
 
@@ -131,8 +137,13 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  arr.slice(curr % 2 === 1);
-};
+  for (let i = arr.length-1; i >=0 ; i--){
+    if (arr[i] % 2 === 0){
+      arr.splice(i,1);
+  }
+   }
+return arr;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -150,7 +161,15 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  if(str >= numberOfCharacters){
+      str.slpit(numberOfCharacters)
+  }
+  if(str >= -(numberOfCharacters)){
+    return str
+  }
+  if (str <= numberOfCharacters){
+    return '';
+  }
 };
 
 
@@ -176,7 +195,7 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-  // Solution code here...
+  str.split()
 };
 
 /* ------------------------------------------------------------------------------------------------
