@@ -14,10 +14,9 @@ For example:
 
 const isNum = (input) => {
   let numCheck = /\d/g;
-  return numCheck.test(input);
-};
-
-
+  return numCheck.test(input)
+}
+// str.test() will return ture or false statment based on the RegExp.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -37,8 +36,8 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  arr.filter(str => str.match(/[A-J][a-zA-Z]\w*/));
-  return arr;
+  return arr.filter(str => str.match(/^[A-J]/g));
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,7 +53,7 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  let monthCheck = /\[oct]/;
+  let monthCheck = /^[Oo]ct(ober)*$/g;
   return monthCheck.test(input);
 };
 
@@ -70,7 +69,7 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  return str.match(/[a-az-Z]\s/);
+  return str.match(/\w+\s/g)
 };
 ///\w=\s/g
 /* ------------------------------------------------------------------------------------------------
@@ -86,7 +85,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  //return str.replace(/[a|e|i|o|u]/g, '_');
+  return str.replace(/[a|e|i|o|u]/g, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------

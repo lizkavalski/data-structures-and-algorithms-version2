@@ -161,13 +161,13 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  if(str >= numberOfCharacters){
-      str.slpit(numberOfCharacters)
+  if(str.length >= numberOfCharacters){
+    return  str.slice(numberOfCharacters)
   }
-  if(str >= -(numberOfCharacters)){
+  if(numberOfCharacters < 0){
     return str
   }
-  if (str <= numberOfCharacters){
+  if (str.length <= numberOfCharacters){
     return '';
   }
 };
