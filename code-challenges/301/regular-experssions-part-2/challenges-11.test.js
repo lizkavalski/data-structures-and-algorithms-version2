@@ -30,7 +30,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // /^[A-Za-z0-9]+\.?[A-Za-z0-9]+?@[A-Za-z0-9]+\.(net|com|org)$/g
+  let emailmatch= /^[A-Za-z0-9]+\.?[A-Za-z0-9]+?@[A-Za-z0-9]+\.(net|com|org)$/g
+  return emailmatch.test(email);
 };
 // it saying everything between ^ and the $ look of anything between a-z(even if it capatizaled) 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +56,7 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
- // let matchPhone= phone.match(^(\d{3}\)*( s|-)*\d{3}(s |-)*\d{4})$);
+ let matchPhone=/^(\(\d{3}\)|\d{3})[ |-]?\d{3}[ |-]?\d{4}$/g;
   return matchPhone.test(phoneNumber);
 };
 
@@ -69,7 +70,7 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-  // Solution code here...
+ // elements.match(/^(/[A-Za])$/g)
 }
 
 /* ------------------------------------------------------------------------------------------------
