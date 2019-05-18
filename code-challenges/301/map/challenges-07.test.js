@@ -71,11 +71,20 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  let map1 = arr.map( x => { 
-    return(x *3)% 2===0 ? 'even' : 'odd'? !;
-  });
-  // console.log(map1);
-};
+  let mapOne= arr.map(x =>{
+    if (typeof x !== 'number'){
+      return 'N/A'
+    }
+      if(x % 2 === 0){
+        return 'even'
+      }
+      else if(x % 2 !== 0){
+        return 'odd'
+      }
+      
+     })
+    return mapOne     
+    }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -120,8 +129,9 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
- arr.map()=> 
-};
+let map2 = arr.map(pokemon => pokemon.ability.name)
+return map2;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -167,12 +177,12 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  let newArr =arr.map(obj => {
-    let newObj ={};
-    newObj[obj.key]=obj.value;
-    return newObj
+  let map3 = arr.stats.map(pokemon =>{
+    let nameStat =  pokemon.stat.name
+    let totalStat= 'total:' + pokemon.effort + pokemon.baseStat
+    return { nameStat : totalStat}
   })
-  console.log(newArr)
+  return map3;
 };
 
 /* ------------------------------------------------------------------------------------------------
