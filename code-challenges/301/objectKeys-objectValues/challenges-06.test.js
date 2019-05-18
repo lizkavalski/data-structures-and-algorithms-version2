@@ -81,10 +81,10 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
-  Object.keys(characters).forEach(property => {
-        console.log(property, characters [house])          
+  Object.keys(characters).forEach(idx => {
+        houses.push(characters[idx].house)        
       });
-//   return houses;
+return houses;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,8 +100,18 @@ hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-}
+  let result;
+  Object.keys(characters).forEach(idx=>{
+    if(character === characters[idx].name) {
+      if(characters[idx].children.length === 0 ){
+        result = false;
+      }else{
+        result = true;
+      }
+    }    
+  })
+  return result;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -112,7 +122,17 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  let result;
+  Object.keys(characters).forEach(idx=>{
+    if(character === characters[idx].name) {
+      if(characters[idx].children.length === 0 ){
+        result = false;
+      }else{
+        result = true;
+      }
+    }    
+  })
+  return result;
 }
 
 /* ------------------------------------------------------------------------------------------------
