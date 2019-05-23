@@ -96,7 +96,7 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // return arr.filter(element => element.baseStat > minBaseStat).map(element => element.stat.name)
+  return arr.filter(element => element.baseStat > minBaseStat).map(element => element.stat.name)
 };
 //* your chaining array. the frist part is looking for the baseStats and checking if it has an items
 
@@ -165,7 +165,7 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  //return arr.filter(element => typeof element ==number).
+  return arr.filter(element => typeof element ==number)//.map(curr % 2=== s0 : 'even' ? 'odd')
 };
 //* typeof is a built in JS that tells JS what it looking for. 
 /* ------------------------------------------------------------------------------------------------
