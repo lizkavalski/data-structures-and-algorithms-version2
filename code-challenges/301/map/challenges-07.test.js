@@ -177,7 +177,7 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  let map3 = arr.stats.map(pokemon => {
+  let map3 = arr.map(pokemon => {
     return {'name': pokemon.stat.name, 'total': pokemon.effort + pokemon.baseStat};
   });
  
