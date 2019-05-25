@@ -40,7 +40,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  let end = forbiddenValue.filer(arr => forbiddenValues.length!== arr.length);
+  let end = arr.filter(value => !forbiddenValues.includes(value));
   return (end);
 };
 
@@ -166,7 +166,7 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  let findNum = arr.filter(element => typeof element === 'numbers').map(curr => curr % 2 === 0 ? 'even' : 'odd');
+  let findNum = arr.filter(element => typeof element === 'number').map(curr => curr % 2 === 0 ? 'even' : 'odd');
   return findNum;
 };
 //* typeof is a built in JS that tells JS what it looking for. 
